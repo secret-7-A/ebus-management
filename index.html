@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Bus Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="scripts.js" defer></script>
+    <script type="module" defer>
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+        </script>
+</head>
+<body>
+    <h1>E-Bus Management System</h1>
+     <!-- Admin Section -->
+     <div class="section" id="admin-section">
+        <h2>Admin Panel</h2>
+        <div class="container">
+            <input type="email" id="driver-email" placeholder="Enter Driver Email">
+            <input type="password" id="driver-password" placeholder="Enter Driver Password">
+            <button id="create-driver-btn">Add Driver</button>
+        </div>
+    </div>
+    
+    <!-- Driver/Travel Section -->
+    <div class="section" id="driver-section">
+        <h2>Driver/Travel Panel</h2>
+        <div class="container">
+            <h3>Login</h3>
+            <input type="email" id="driver-login-email" placeholder="Enter Email">
+            <input type="password" id="driver-login-password" placeholder="Enter Password">
+            <button id="driver-login-btn">Login</button>
+        </div>
+        <div class="container">
+            <h3>Post Bus Information</h3>
+            <input type="text" id="bus-name" placeholder="Enter Bus Name">
+            <input type="text" id="bus-number" placeholder="Enter Bus Number">
+            <input type="text" id="bus-route" placeholder="Enter Route">
+            <input type="number" id="bus-capacity" placeholder="Enter Capacity">
+            <button id="post-bus-btn">Post Bus</button>
+        </div>
+        <div class="container">
+            <h3>Post Bus Type</h3>
+            <input type="text" id="bus-type" placeholder="Enter Bus Type (e.g., AC, Non-AC, Sleeper)">
+            <button id="post-bus-type-btn">Post Bus Type</button>
+        </div>
+        <div class="container">
+            <h3>Post Contact Details</h3>
+            <input type="text" id="contact-name" placeholder="Enter Contact Name">
+            <input type="text" id="contact-phone" placeholder="Enter Contact Phone">
+            <input type="email" id="contact-email" placeholder="Enter Contact Email">
+            <button id="post-contact-btn">Post Contact</button>
+        </div>
+    </div>
+    
+    <!-- User Section -->
+    <div class="section" id="user-section">
+        <h2>User Panel</h2>
+        <div class="container">
+            <h3>Register</h3>
+            <input type="text" id="user-first-name" placeholder="Enter First Name">
+            <input type="text" id="user-last-name" placeholder="Enter Last Name">
+            <input type="email" id="user-email" placeholder="Enter Email">
+            <input type="password" id="user-password" placeholder="Enter Password">
+            <button id="register-user-btn">Register</button>
+        </div>
+        <div class="container">
+            <h3>Login</h3>
+            <input type="email" id="login-user-email" placeholder="Enter Email">
+            <input type="password" id="login-user-password" placeholder="Enter Password">
+            <button id="login-user-btn">Login</button>
+        </div>
+        <div class="container">
+            <h3>View Bus Details</h3>
+        
+            <button id="view-buses-btn">View Buses</button>
+            <div id="buses-container"></div>
+        </div>
+    </div>
+        </body>
+        </html>
